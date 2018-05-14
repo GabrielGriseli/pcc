@@ -4,10 +4,10 @@ Repositório Referente ao **P**rojeto de **C**onclusão de **C**urso em Ciência
 # Checklist
 
 - [X] Usar o template em LaTeX para escrita do PCC
-- [ ] Estrutura do PCC
+- [X] Estrutura do PCC
 - [ ] Deadline
 - [ ] Referências (Escrita do Projeto)
-- [ ] Resumo
+- [X] Resumo
 - [ ] Introdução
   
  **Nota** - O Resumo e a Introdução foram solicitados pelo professor da disciplina e que sejam entregues em uma versão preliminar antes da escrita do projeto em si.
