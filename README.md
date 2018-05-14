@@ -8,7 +8,7 @@ Repositório Referente ao **P**rojeto de **C**onclusão de **C**urso em Ciência
 - [ ] Deadline
 - [ ] Referências (Escrita do Projeto)
 - [X] Resumo
-- [ ] Introdução
+- [X] Introdução
 - [ ] Objetivos
 - [ ] Justificativa
 - [ ] Metodologia
