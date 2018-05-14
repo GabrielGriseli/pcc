@@ -37,9 +37,18 @@
 \usepackage{lscape}                                         % Permite páginas em modo "paisagem"
 %\usepackage{picinpar}                                      % Dispor imagens em parágrafos
 %\usepackage{scalefnt}
-\usepackage{setspace}                                    % Permite redimensionar tamanho da fonte
+\usepackage{setspace}                                       % Permite redimensionar tamanho da fonte
 %\usepackage{subfig}                                        % Posicionamento de figuras
 %\usepackage{upgreek}                                       % Fonte letras gregas
+
+% Retira Hifenização de todo o template (opcional) não está errado utilizar isso
+\usepackage{hyphenat}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\hyphenchar\font=-1
+\sloppy                                     
 
 % Redefine a fonte para uma fonte similar a Arial (fonte Helvetica)
 % \renewcommand*\familydefault{\sfdefault}
