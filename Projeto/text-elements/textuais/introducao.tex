@@ -3,31 +3,12 @@
 \chapter{INTRODUÇÃO}
 \label{chap:introducao}
 
-Edite e coloque aqui o seu texto de introdução.
+Arquiteturas Heterogêneas são compostas pelo uso de diferentes tipos de componentes em um mesmo nó computacional. Geralmente essas arquiteturas são compostas por CPUs - (\emph{Central Processing Unit}) e aceleradores, como por exemplo, a GPU - (\emph{Graphics Processing Unit}). Atualmente, muitos fabricantes de chips estão integrando a CPU junto com aceleradores em um mesmo chip, como por exemplo o \emph{Intel Graphics}. 
 
-A Introdução é a parte inicial do texto, na qual devem constar o tema e a delimitação do assunto tratado, objetivos da pesquisa e outros elementos necessários para situar o tema do trabalho, tais como: justificativa, procedimentos metodológicos (classificação inicial), embasamento teórico (principais bases sintetizadas) e estrutura do trabalho, tratados de forma sucinta. Recursos utilizados e cronograma são incluídos quando necessário. Salienta-se que os procedimentos metodológicos e o embasamento teórico são tratados, posteriormente, em capítulos próprios e com a profundidade necessária ao trabalho de pesquisa.
+Por mais que esse tipo de arquitetura aumente o desempenho e diminua o gasto energético, o desenvolvimento de aplicações paralelas para arquiteturas heterogêneas é de certa forma visto como algo desafiador. Para o desenvolvedor conseguir aproveitar totalmente os componentes e recursos, o mesmo deverá identificar e distribuir as instruções mais adequadas em alguns destes componentes, para então tentar alcançar o melhor desempenho da aplicação. Atualmente existem ambientes que se encarregam desta distribuição das instruções para os componentes da arquitetura, como por exemplo, o \emph{StarPU}.
 
-\section{Leia Está seção Antes de Começar}
-\label{sec:antesleiame}
+Neste contexto, o trabalho proposto explorará a programação de aplicações paralelas baseadas em tarefas, utilizando o paradigma de Grafo de Dependência de Tarefas. Nesse paradigma, o código da aplicação registra a criação de tarefas e a dependência de dados que existe entre elas. Esse registro de criação de tarefas é direcionado a um ambiente de execução, que se encarrega de distribuir as tarefas de maneira igualitária entre os recursos computacionais.
 
-Este documento é um \emph{template} \LaTeX{} que foi concebido, primariamente, para ser utilizado na elaboração de Trabalho de Conclusão de Curs em conformidade com as normas da Universidade Tecnológica Federal do Paraná.
+Como aplicação, será desenvolvido uma simulação de transferência de calor (decomposição cartesiana) em uma placa metálica bidimensional de forma sequencial. Posteriormente, será implementado uma versão paralela da aplicação, para ser executada no ambiente \emph{StarPU}. Ao final desse trabalho, será coletado dados sobre as duas implementações e realizado uma análise de desempenho, para então, tirar as conclusões sobre o trabalho.
 
-Para a produção deste \emph{template} foi necessário adaptar o arquivo {\ttfamily abntex2.cls}. Assim, foi produzido o arquivo {\ttfamily utfpr-abntex2.cls} que define o \verb|documentclass| específico para a UTFPR.
-
-Com bases nessas alterações sugiu as modificações para o \emph{template} não oficial da Universidade Regional Integrada do Alto Uruguai e das Missões (URI). Para estas alterações foi modificado o arquivo {\ttfamily utfpr-abntex2.cls} pra {\ttfamily uri-abntex2.cls} contendo as modificações necessárias para apresentação de trabalhos acadêmicos da Instituição. 
-
-\subsection{Isso é um teste}
-\label{subsec:teste}
-
-Antes de começar a escrever o seu trabalho acadêmico utilizando este \emph{template}, é importante saber que há dois arquivos que você precisará editar para que a capa e a folha de rosto de seu trabalho sejam geradas automaticamente.
-São eles os arquivos {\ttfamily capa.tex} e {\ttfamily folha-rosto.tex}, ambos no diretório  {\ttfamily /elementos-pre-textuais}.
-No arquivo {\ttfamily capa.tex} deverá ser informado nome do autor, título do trabalho, natureza do trabalho, nome do orientador e outras informações necessárias.
-No arquivo {\ttfamily folha-rosto.tex}, que contém o texto padrão estabelecendo que este documento é um requisito parcial para a obtenção do título pretendido, será necessário apenas comentar as linhas que não se aplicam ao tipo de trabalho acadêmico.
-
-A compilação para gerar um arquivo no formato pdf, incluindo corretamente as referências bibliográficas, deve ser realizada utilizando o comando \verb|makefile|, disponível na mesma pasta onde está o arquivo principal \verb|uri-tcc.tex|. Caso seja alterado o nome do arquivo \verb|uri-tcc.tex|, deverá ser alterado no arquivo \verb|makefile| também.
-
-\section{ORGANIZAÇÃO DO TRABALHO}
-\label{sec:organizacaoTrabalho}
-
-Normalmente ao final da introdução é apresentada, em um ou dois parágrafos curtos, a organização do restante do trabalho acadêmico.
-Deve-se dizer o quê será apresentado em cada um dos demais capítulos.
+O presente trabalho está estruturado da seguinte maneira: a seção 2 apresenta os objetivos gerais e específicos, a sessão 3 a justificativa do projeto de pesquisa e a seção 4 o referencial teórico. Em seguida a seção 5 apresenta a metodologia e a sessão 6 o cronograma de atividades. Por fim a seção 7 apresenta as conclusões.
