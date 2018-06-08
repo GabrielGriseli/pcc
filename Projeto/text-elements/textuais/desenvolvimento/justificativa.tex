@@ -4,7 +4,3 @@
 \label{chap:justificativa}
 
 A maioria dos atuais sistemas de processamento de alto desempenho tem a sua arquitetura Heterogênea, formada por CPUs multicores e aceleradores como a GPU. o desenvolvimento de aplicações para essas arquiteturas é feito através de APIs ou bibliotecas. Essas APIs são específicas para cada tipo de componente de uma arquitetura Heterogênea, por exemplo, nas aplicações que exploram os recursos das CPUs multicores pode se usar a API OpenMP. Já nas aplicações que visão utilizar a GPU pode se usar CUDA ou OpenCL.
-
-Caso o programador queira extrair o melhor desempenho possível e utilizar ambos recursos dessa arquitetura, o mesmo devera utilizar diferentes APIs para isso. Outra questão que é observada, é o problema da portabilidade quando é desenvolvido uma aplicação que visa usar a GPU como recurso, pois a maioria das instruções são de baixo nível, fazendo com que uma aplicação fique restrita a um determinado modelo e/ou fabricando de hardware.
-
-Existem ambientes de programação que oferecem suporte para arquiteturas CPUs multicores e GPU simultaneamente. Esses ambientes visam distribuir as instruções de uma aplicação para os recursos de uma arquitetura visando melhorar o desempenho da execução final da aplicação. Além disso a utilização desses ambientes torna os códigos das aplicações portáveis para outros componentes.
