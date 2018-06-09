@@ -2,14 +2,20 @@
 
 \chapter{METODOLOGIA}
 \label{chap:metodologia}
-Cada capítulo deve conter uma pequena introdução (tipicamente, um ou dois parágrafos) que deve deixar claro o objetivo e o que será discutido no capítulo, bem como a organização do capítulo.
 
-\section{DELINEAMENTO DA PESQUISA}
-\label{sec:titSecDelPesq}
+Para conseguir explorar os ambientes de execução em arquiteturas heterogêneas será necessário a implementação de uma aplicação.
+Essa aplicação que será desenvolvida será a de uma simulação de transferência de calor em uma placa metálica bidimensional,
+utilizando a decomposição cartesiana.
 
-Inserir seu texto aqui...
+Primeiramente será necessário a implementação de forma sequencial da simulação.
+Esse passo é interessante para entender como o \textit{kernel} implementa a transferência de calor e as suas dependências com os vizinhos
+da decomposição cartesiana, assim também como os ajustes dos \textit{timestemps} que a simulação terá.
 
-\section{COLETA E TRATAMENTO DE DADOS}
-\label{sec:titSecColDad}
+Apos a implementação sequencial será necessário a configuração do ambiente StarPU.
+Para a configuração do mesmo, será estudado a documentação do ambiente e implementado alguns scripts do próprio tutorial do StarPU
+para validar a configuração.
 
-Inserir seu texto aqui...
+Apos a configuração e estudo do ambiente, será buscado trabalhos relacionados para entender como funciona o paradigma de grafo de dependências de tarefas.
+Ao final dessa pesquisa, será necessário implementar a versão paralela da simulação para ser executada no ambiente StarPU.
+
+Por fim, será realizado testes de desempenho sobre as execuções das duas implementações e tirado as conclusões do trabalho.
