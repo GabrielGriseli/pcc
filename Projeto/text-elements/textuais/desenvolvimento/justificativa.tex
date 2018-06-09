@@ -11,7 +11,16 @@ das CPUs \textit{multicore} pode se usar a API OpenMP (\textit{Open Multi-Proces
 Intel TBB \cite{inteltbb:2018} (\textit{Threading Building Blocks}).
 Já nas aplicações que visão utilizar a GPU pode se usar OpenCL(\textit{Open Computing Language}) \cite{opencl:2018} ou CUDA (\textit{Compute Unified Device Architecture}) \cite{cuda:2018}.
 
-
 De acordo com \cite{intrArqHete:2012}, caso o desenvolvedor queira extrair o melhor desempenho possível e utilizar ambos recursos de uma
 arquitetura heterogênea, é necessário que o mesmo saiba identificar quais são as tarefas mais adequadas para a execução em um acelerador
 e aquelas mais adequadas à execução em uma CPU \textit{multicore}.
+
+Outra questão que é observada é sobre a portabilidade de um código para uma arquitetura heterogênea.
+Segundo \cite{problemsArqHete:2013}, um dos grandes desafios para utilizar os recursos heterogêneos é a diversidade de dispositivos em diferentes máquinas.
+Pois um programa que tenha sido otimizado para um determinado acelerador, pode não funcionar tão bem na próxima geração de processadores ou em um dispositivo de um outro fornecedor.
+No caso da GPU a programação é feita em um nível próximo ao do \textit{hardware}, fazendo com que muitas vezes o código fique restrito a um modelo e ou fabricante \cite{pinto2011ambientes}.
+
+Vale salientar que o desempenho das CPUs e GPUs também variam entre as máquinas.
+Uma execução específica pode funcionar melhor na CPU, enquando que em outra máquina pode funcionar melhor da GPU.
+Existe também alguns problemas no escalonamento, se uma aplicação tem desempenho melhor na GPU, mas esta mesma está sobrecarregada e a CPU estiver ociosa, pode ser necessário balancear
+a carga de trabalho entre os dois recursos \cite{problemsArqHete:2013}.
