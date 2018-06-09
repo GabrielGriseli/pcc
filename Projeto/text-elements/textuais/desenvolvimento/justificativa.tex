@@ -24,3 +24,10 @@ Vale salientar que o desempenho das CPUs e GPUs também variam entre as máquina
 Uma execução específica pode funcionar melhor na CPU, enquando que em outra máquina pode funcionar melhor da GPU.
 Existe também alguns problemas no escalonamento, se uma aplicação tem desempenho melhor na GPU, mas esta mesma está sobrecarregada e a CPU estiver ociosa, pode ser necessário balancear
 a carga de trabalho entre os dois recursos \cite{problemsArqHete:2013}.
+
+Atualmente existem ambientes de execução que dão suporte a CPUs e GPU simultaneamente.
+Esses ambientes se encarregam de distribuir as tarefas de maneira igualitária entre os recursos computacionais CPUs e GPUs.
+Um fator importante é que esses ambientes implementam escalonadores que são responsáveis pelo desempenho final da aplicação, libertando o desenvolvedor da necessidade de adaptar
+a aplicação especificamente à máquina destino e unidades de processamento \cite{kumar:tel-01538516}.
+
+É importante também dizer que a utilização destes ambientes mantêm o código portável entre diferentes modelos e ou fabricantes de hardware  \apud{dolbeau2007hmpp}{pinto2011ambientes}
