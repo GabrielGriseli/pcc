@@ -5,23 +5,25 @@
 
 Arquiteturas Heterogêneas são compostas pelo uso de diferentes tipos de componentes em um mesmo nó computacional.
 Geralmente essas arquiteturas são compostas por CPUs (\textit{Central Processing Unit}) e aceleradores, como por exemplo, a GPU (\textit{Graphics Processing Unit}).
-Atualmente, muitos fabricantes de chips estão integrando a CPU junto com aceleradores em um mesmo chip, como por exemplo o \textit{Intel Graphics}. 
+Atualmente, muitos fabricantes de chips estão integrando os aceleradores junto com a CPU em um mesmo chip, um exemplo disso é o \textit{Intel Graphics}. 
 
-Por mais que esse tipo de arquitetura aumente o desempenho e diminua o gasto energético,
+Utilizar aceleradores como a GPU, junto com a CPU aumenta o desempenho e diminui o gasto energético, porém,
 o desenvolvimento de aplicações paralelas para arquiteturas heterogêneas é de certa forma visto como algo desafiador.
 Para o desenvolvedor conseguir aproveitar totalmente os componentes e recursos, o mesmo deverá identificar e distribuir as instruções mais adequadas em alguns destes componentes,
 para então tentar alcançar o melhor desempenho da aplicação.
 Atualmente existem ambientes que se encarregam desta distribuição das instruções para os componentes da arquitetura, como por exemplo, o \textit{StarPU}.
 
-Neste contexto, o trabalho proposto explorará a programação de aplicações paralelas baseadas em tarefas, utilizando o paradigma de Grafo de Dependência de Tarefas.
+Neste contexto, o trabalho proposto tentará avaliar o desempenho de uma aplicação quando executada em um destes ambientes.
+Para conseguir explorar os ambientes de execução em arquiteturas heterogêneas, será necessário desenvolver uma aplicação.
+Essa aplicação será a de uma simulação de transferência de calor em uma placa metálica bidimensional, utilizando o paradigma de Grafo de Dependência de Tarefas. 
+
 Nesse paradigma, o código da aplicação registra a criação de tarefas e a dependência de dados que existe entre elas.
 Esse registro de criação de tarefas é direcionado a um ambiente de execução, que se encarrega de distribuir as tarefas de maneira igualitária entre os recursos computacionais.
 
-Como aplicação, será desenvolvido uma simulação de transferência de calor (decomposição cartesiana) em uma placa metálica bidimensional de forma sequencial.
-Posteriormente, será implementado uma versão paralela da aplicação, para ser executada no ambiente \texit{StarPU}.
-Ao final desse trabalho, será coletado dados sobre as duas implementações e realizado uma análise de desempenho, para então, tirar as conclusões sobre o trabalho.
+Em um primeiro momento será implementado uma versão sequencial da aplicação e posteriormente, será implementado uma versão paralela, para ser executada no ambiente \textit{StarPU}.
+Ao final desse trabalho, será coletado dados sobre as duas implementações e realizado uma análise de desempenho,
+com o objetivo de avaliar se a aplicação utilizando o paradigma de grafo de dependência de tarefas, terá maior desempenho quando executada no ambiente \textit{StarPU}. 
 
-O presente trabalho está estruturado da seguinte maneira: a seção 2 apresenta os objetivos gerais e específicos, a sessão 3 a justificativa do projeto de pesquisa e a seção 4
-o referencial teórico.
+O presente trabalho está estruturado da seguinte maneira: a seção 2 apresenta os objetivos gerais e específicos, a sessão 3 a justificativa do projeto de pesquisa e a seção 4 o referencial teórico.
 Em seguida a seção 5 apresenta a metodologia e a sessão 6 o cronograma de atividades.
 Por fim a seção 7 apresenta os resultados esperados.
