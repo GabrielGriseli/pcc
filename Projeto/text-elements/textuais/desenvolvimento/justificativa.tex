@@ -21,13 +21,11 @@ Pois um programa que tenha sido otimizado para um determinado acelerador, pode n
 No caso da GPU a programação é feita em um nível próximo ao do \textit{hardware}, fazendo com que muitas vezes o código fique restrito a um modelo e ou fabricante \cite{pinto2011ambientes}.
 
 Vale salientar que o desempenho das CPUs e GPUs também variam entre as máquinas.
-Uma execução específica pode funcionar melhor na CPU, enquando que em outra máquina pode funcionar melhor da GPU.
-Existe também alguns problemas no escalonamento, se uma aplicação tem desempenho melhor na GPU, mas esta mesma está sobrecarregada e a CPU estiver ociosa, pode ser necessário balancear
-a carga de trabalho entre os dois recursos \cite{problemsArqHete:2013}.
+Uma execução específica pode ter um melhor desempenho na CPU, enquanto que em outra máquina o desempenho pode ser melhor na GPU.
+Existe também alguns problemas no escalonamento das tarefas de uma aplicação para os recursos da máquina, que podem ser resolvidas com balanceamento de carga.
+Como por exemplo, redistribuir a carga para uma CPU ociosa, quando a GPU estiver sobrecarregada. \cite{problemsArqHete:2013}.
 
-Atualmente existem ambientes de execução que dão suporte a CPUs e GPU simultaneamente.
-Esses ambientes se encarregam de distribuir as tarefas de maneira igualitária entre os recursos computacionais CPUs e GPUs.
-Um fator importante é que esses ambientes implementam escalonadores que são responsáveis pelo desempenho final da aplicação, libertando o desenvolvedor da necessidade de adaptar
-a aplicação especificamente à máquina destino e unidades de processamento \cite{kumar:tel-01538516}.
-
-É importante também dizer que a utilização destes ambientes mantêm o código portável entre diferentes modelos e ou fabricantes de hardware  \apud{dolbeau2007hmpp}{pinto2011ambientes}
+Atualmente existem ambientes de execução que dão suporte a CPUs e GPU simultaneamente, como por exemplo, o StarPU \cite{augonnet2011starpu}.
+Esses ambientes buscam distribuir as tarefas de maneira igualitária entre os recursos computacionais CPUs e GPUs.
+De acordo com \cite{kumar:tel-01538516}, a utilização destes ambientes libera o desenvolvedor da necessidade de adaptar a aplicação especificamente
+à máquina destino e unidades de processamento.
