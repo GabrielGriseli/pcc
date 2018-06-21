@@ -7,19 +7,20 @@ Para conseguir explorar os ambientes de execução em arquiteturas heterogêneas
 Essa aplicação que será desenvolvida será a de uma simulação de transferência de calor em uma placa metálica bidimensional,
 utilizando a decomposição cartesiana.
 
-Inicialmente, será feita uma pesquisa sobre arquiteturas heterogêneas e como funcionam os ambientes de execução para estar arquiteturas,
+Inicialmente, será feita uma pesquisa sobre arquiteturas heterogêneas e como funcionam os ambientes de execução para estas arquiteturas,
 mais especificamente o ambiente StarPU.
-Também serão estudados alguns trabalhos relacionados que utilizam este ambiente e o paradigma de grafo de dependências de tarefas.
+Também serão estudados alguns trabalhos relacionados, que utilizam este ambiente e o paradigma de grafo de dependências de tarefas.
 
-Posterior a isso, será realizado a implementação de forma sequencial da simulação.
-Este passo é interessante para entender como funciona a transferência de calor utilizando a decomposição cartesiana e as dependências de
+Posterior a isso, será realizado a implementação sequencial da simulação.
+Este passo é interessante para entender como funciona a transferência de calor, utilizando a decomposição cartesiana e as dependências de
 dados que existem na aplicação.
 
-Apos a implementação sequencial será necessário estudar e configurar o ambiente StarPU. Para a configuração do mesmo,
-será estudado a documentação do ambiente e implementado
-alguns scripts do próprio tutorial do StarPU para validar a configuração.
+Apos a implementação sequencial, será necessário estudar e configurar o ambiente StarPU. Para a configuração do mesmo,
+será estudado a documentação do ambiente e implementado alguns scripts do próprio tutorial.
+O tutorial do StarPU é importante tanto para entender como funciona o ambiente de execução, como para configurar de forma correta o ambiente.
 
 Em seguida, será realizado a implementação paralela da simulação de transferência de calor.
-Para isto, será utilizado o paradigma de grafos de dependências de tarefas para então executar no ambiente StarPU.
+Para isto, será utilizado o paradigma de grafos de dependências de tarefas e executada no ambiente StarPU.
 
-Por fim, será realizado testes de desempenho sobre as execuções das duas implementações e tirado as conclusões do trabalho.
+Por fim, será verificado qual é a melhor técnica de análise de desempenho para os dados obtidos nas execuções,
+para então, ser concluído se aplicação paralela teve melhor desempenho, ou não, quando comparada com a aplicação sequencial.
