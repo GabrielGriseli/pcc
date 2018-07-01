@@ -52,6 +52,12 @@ As GPUs modernas são um multiprocessador altamente paralelo e \textit{multithre
 No contexto das arquiteturas heterogêneas podemos encontrar as GPUs trabalhando com as CPUs em nosso dia a dia, como por exemplo.
 “PCs e consoles de jogo combinam uma GPU com uma CPU para formar sistemas heterogêneos” \cite[p.~A-569]{hennessy2014organizaccao}.
 
+Para ser possível programar aplicações de computação paralela em GPUs, opta-se geralmente por modelos de programação, como CUDA e OpenCL.
+CUDA, é uma interface para programação paralela escalável baseada em linguagem C/C++, para GPUs fabricadas pela NVIDIA \cite{hennessy2014organizaccao}.
+
+OpenCL, é uma interface voltada para programação paralela em ambientes heterogêneos, possibilitando que o desenvolvimento da aplicação seja executado em diferentes dispositivos instalados em uma máquina (CPU-GPU).
+Diferente da interface CUDA, a OpenCL não está vinculada a uma fabricante de GPU, portanto o desenvolvimento de aplicações com essa interface não fica limitado a um fabricante específico \cite{opencl:2018}.
+
 \section{Ambientes de Execução para Arquiteturas Heterogêneas}
 \subsection{StarPU}
 \subsection{Xkaapi}
