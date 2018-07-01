@@ -42,11 +42,15 @@ Intel TBB é uma biblioteca desenvolvida pela Intel, onde são usados \textit{te
 neste caso não são necessários a utilização de linguagens ou compiladores especiais
 
 \subsection{Aceleradores}.
-% \section{Programação Paralela em Arquiteturas Heterogêneas}
-% \subsection{CUDA}
-% \subsection{OpenCL}
-% \subsection{Intel tbb}
-% \subsection{OpenACC}
+Um acelerador é um \textit{hardware} que tem a função de executar algumas instruções mais eficientes,
+quando comparada com a CPU. São exemplos de aceleradores as GPUs e as FPGAs \cite{kindratenko2010high}.
+
+\subsubsection{GPUs}
+As GPUs, em português, unidade de processamento gráfico, inicialmente foram desenvolvidas para ser um processador otimizado para gráficos 2D e 3D, vídeo,
+computação visual e exibição de dados.
+As GPUs modernas são um multiprocessador altamente paralelo e \textit{multithread}, que podem ser utilizadas para resolver problemas complexos com programas paralelos \cite{hennessy2014organizaccao}.
+No contexto das arquiteturas heterogêneas podemos encontrar as GPUs trabalhando com as CPUs em nosso dia a dia, como por exemplo.
+“PCs e consoles de jogo combinam uma GPU com uma CPU para formar sistemas heterogêneos” \cite[p.~A-569]{hennessy2014organizaccao}.
 
 \section{Ambientes de Execução para Arquiteturas Heterogêneas}
 \subsection{StarPU}
