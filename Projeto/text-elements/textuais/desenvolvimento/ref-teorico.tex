@@ -59,8 +59,12 @@ OpenCL, é uma interface voltada para programação paralela em ambientes hetero
 Diferente da interface CUDA, a OpenCL não está vinculada a uma fabricante de GPU, portanto o desenvolvimento de aplicações com essa interface não fica limitado a um fabricante específico \cite{opencl:2018}.
 
 \section{Ambientes de Tempo de Execução Baseados em Tarefas}
-introdução 
+Os ambientes de execução baseados em tarefas tem o objetivo de facilitar o desenvolvimento e a execução de aplicações paralelas em sistemas heterogêneos.
+Esses ambientes permitem que os desenvolvedores programem aplicações paralelas em alto nível com APIs simples, retirando a obrigação do mesmo de lidar com detalhes de baixo nível, como transferência de dados, agendamento de tarefas e sincronizações \cite{kumar:tel-01538516}.
 
+Nesses ambientes é possível desenvolver aplicações paralelas orientadas ao paradigma de Grafo de Dependências de Tarefas.
+Nesse paradigma, o código da aplicação registra a criação de tarefas e a dependência de dados que existem entre elas.
+Esse registro é expressado como um grafo acíclico direcionado - \textit{Directed Acyclic Graph} (DAG), onde os vértices do grafo representam as tarefas a serem executadas e as arestas as dependências de dados que existem entre essas tarefas \cite{kumar:tel-01538516,thoman2018taxonomy}.
 \subsection{Paradigma de Grafo de Dependência de Tarefas}
 
 \subsection{StarPU}
