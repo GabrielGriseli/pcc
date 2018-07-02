@@ -362,7 +362,7 @@
             \abntex@ifnotempty{\imprimirorientador}
             {%
                 % & \bfseries\normalsize\imprimirorientadorRotulo & \bfseries\normalsize\imprimirorientador
-                & \bfseries\normalsize{Professor.} & \bfseries\normalsize\imprimirorientador
+                & \bfseries\normalsize{Professor:} & \bfseries\normalsize\imprimirorientador
 
             }
             % O campo para coorientador foi comentando
