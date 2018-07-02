@@ -65,7 +65,31 @@ Esses ambientes permitem que os desenvolvedores programem aplicações paralelas
 Nesses ambientes é possível desenvolver aplicações paralelas orientadas ao paradigma de Grafo de Dependências de Tarefas.
 Nesse paradigma, o código da aplicação registra a criação de tarefas e a dependência de dados que existem entre elas.
 Esse registro é expressado como um grafo acíclico direcionado - \textit{Directed Acyclic Graph} (DAG), onde os vértices do grafo representam as tarefas a serem executadas e as arestas as dependências de dados que existem entre essas tarefas \cite{kumar:tel-01538516,thoman2018taxonomy}.
-\subsection{Paradigma de Grafo de Dependência de Tarefas}
+
+\subsection{Paradigma de Paralelismo de Tarefas}
+
+\begin{citacao}
+O paralelismo de tarefas (\textit{task parallelism}) é o tipo de paralelismo que é naturalmente expresso por meio de tarefas paralelas em um grafo de dependência de tarefas.
+Algoritmos como o quicksort paralelo, a fatoração de matrizes esparsas e os algoritmos derivados pela decomposição por divisão e conquista são exemplos de algoritmos que podem ser descritos nesse paradigma \apud{grama2003introduction}{pinto2013escalonamento}   %\cite{pinto2013escalonamento}”
+\end{citacao}
+
+Um dos motivos que justifica utilizar esse paradigma é que muitas tarefas em um problema maior não levam a mesma quantidade de tempo para serem executadas.
+Colocar essas tarefas para executar paralelamente pode reduzir o tempo necessário para resolver o problema em si.
+Outro ponto é que, “as tarefas podem ter dependências entre si ou podem ser completamente independentes \cite{pinto2013escalonamento}".
+
+FIGURA
+
+A figura x demonstra um grafo de dependência de tarefas de um algoritmo de mergesort, nesse exemplo, as tarefas \emph{T1},\emph{T2} e \emph{T3} dividem a entrada inicial, cada uma com metade do tamanho (\emph{n/2}).
+Cada metade é uma nova tarefa, sendo que são elas são, \emph{T4}, \emph{T5}, \emph{T6} E \emph{T7}, essas tarefas são responsáveis por ordenar os dados.
+Apos isso, as tarefas \emph{T8}, \emph{T9} e \emph{T10} fazem a combinação das partes separadas.
+
+Nesse exemplo é possível notar as dependências de dados que existem entre as tarefas, pois as tarefas de combinação não podem ser executadas antes que as tarefas de divisão e ordenação tenham sido concluídas;
+
+Aplicações baseadas no paradigma de paralelismo de tarefas podem explorar mais os recursos computacionais quando direcionadas a um ambiente de execução.
+Após o desenvolvedor descrever as tarefas e as suas dependências, o ambiente é responsável pelo agendamento de tarefas, transferência de dados e gerenciamento das dependências \cite{pinto2017visual}.
+
+Para executar essas atividades descritas acima, o sistema de execução infere características sobre o código da aplicação, como a quantidade de tarefas implementadas, unidade de processamento disponível (quantidade de núcleos de CPU e de dispositivos de GPUs), duração estimada da tarefa, localidade dos dados e largura de interconexão.
+Apos isso, o tempo de execução pode usar heurísticas de agendamento apropriadas e executar otimizações para obter um melhor desempenho \cite{pinto2017visual}.
 
 \subsection{StarPU}
 
