@@ -77,9 +77,15 @@ Um dos motivos que justifica utilizar esse paradigma é que muitas tarefas em um
 Colocar essas tarefas para executar paralelamente pode reduzir o tempo necessário para resolver o problema em si.
 Outro ponto é que, “as tarefas podem ter dependências entre si ou podem ser completamente independentes \cite{pinto2013escalonamento}".
 
-FIGURA
+\begin{figure}[!htb]
+    \centering
+    \caption{Exemplo de um grafo de dependência de tarefas para o algoritmo mergesort.}
+    \includegraphics[width=0.5\textwidth]{./dados/figuras/mergesort}
+    \fonte{\citeonline{pinto2013escalonamento}}
+    \label{fig:figura-mergesort}
+\end{figure}
 
-A figura x demonstra um grafo de dependência de tarefas de um algoritmo de mergesort, nesse exemplo, as tarefas \emph{T1},\emph{T2} e \emph{T3} dividem a entrada inicial, cada uma com metade do tamanho (\emph{n/2}).
+A \autoref{fig:figura-mergesort} demonstra um grafo de dependência de tarefas de um algoritmo de mergesort, nesse exemplo, as tarefas \emph{T1},\emph{T2} e \emph{T3} dividem a entrada inicial, cada uma com metade do tamanho (\emph{n/2}).
 Cada metade é uma nova tarefa, sendo que são elas são, \emph{T4}, \emph{T5}, \emph{T6} E \emph{T7}, essas tarefas são responsáveis por ordenar os dados.
 Apos isso, as tarefas \emph{T8}, \emph{T9} e \emph{T10} fazem a combinação das partes separadas.
 
