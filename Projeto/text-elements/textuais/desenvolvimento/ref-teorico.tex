@@ -98,5 +98,19 @@ Para executar essas atividades descritas acima, o sistema de execução infere c
 Apos isso, o tempo de execução pode usar heurísticas de agendamento apropriadas e executar otimizações para obter um melhor desempenho \cite{pinto2017visual}.
 
 \subsection{StarPU}
+StarPU é um sistema de tempo de execução que oferece suporte a arquiteturas multicore heterogêneas, oferecendo uma visão unificada dos recursos computacionais (CPUs e aceleradores ao mesmo tempo).
+O ambiente implementa mecanismos para escalonar de forma eficiente as tarefas em uma arquitetura heterogênea \cite{augonnet2011scheduling}. 
 
+Esta ferramenta tem como objetivo permitir que os programadores explorem o poder de computação das CPUs e GPUs disponíveis, ao mesmo tempo que em que os libera da necessidade de adaptar especialmente seus programas à máquina de destino e unidades de processamento.
+StarPU é uma extensão para linguagens da família C (C Extensions), ela fornece uma API para descrever as tarefas e as suas dependências que podem existir em uma aplicação \cite{augonnet2011scheduling}.
+
+\begin{citacao}
+O modelo de execução do StarPU propõe uma abordagem de tarefas independente da arquitetura base.
+São definidos codelets como uma abstração de uma tarefa que pode ser executada em um núcleo de uma CPU multicore ou submetido a um acelerador.
+Cada codelet pode ter múltiplas implementações, uma para cada arquitetura em que o codelet pode ser executado.
+Cada implementação utiliza as linguagens de programação ou bibliotecas específicas para a arquitetura alvo.
+Um codelet contém uma descrição dos dados e o tipo de acesso (leitura, escrita ou ambos).
+Codelets são lançados de forma assíncrona. Com isso o escalonador pode reordenar as tarefas para melhorar o desempenho respeitando as dependências entre elas.
+Uma aplicação StarPU é descrita como um conjunto de codelets com suas dependências de dados. \cite[p.~26]{pinto2011ambientes}
+\end{citacao}
 \section{Transferência de Calor em Placas Metálicas}
