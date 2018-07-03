@@ -122,3 +122,36 @@ Uma aplicação StarPU é descrita como um conjunto de codelets com suas depend�
 \end{citacao}
 
 \section{Simulação de Transferência de Calor}
+% theinparallel
+
+A equação de transferência de calor é um protótipo para equações gerais de reação difusão, que são usadas para modelar muitas situações físicas e químicas.
+Essa equação é amplamente utilizada em aplicações científicas, como previsão do tempo, simulação de correntes oceânicas e modelagem climática \cite{theinparallel}.
+
+Uma simulação de transferência de calor em uma placa metálica bidimensional, descreve a mudança de temperatura ao longo do tempo, dada uma distribuição inicial de temperatura e as condições limites.
+Na \autoref{fig:figura-heat-initial}, é possível ver os elementos de uma matriz bidimensional representando a temperatura em cada quadrado \cite{theinparallel}.
+
+\begin{figure}[!htb]
+    \centering
+    \caption{Representação 2D da transferência de calor}
+    \includegraphics[width=0.5\textwidth]{./dados/figuras/heat_initial}
+    \fonte{\citeonline{theinparallel}}
+    \label{fig:figura-heat-initial}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \caption{Dependência de dados em uma transferência de calor}
+    \includegraphics[width=0.5\textwidth]{./dados/figuras/heat_equation}
+    \fonte{\citeonline{theinparallel}}
+    \label{fig:figura-heat-equation}
+\end{figure}
+
+Essa simulação contem grande dependência dos dados entre si, pois para poder calcular um elemento, nessa matriz, é necessário antes calcular seus “vizinhos”, como é demonstrado na \autoref{fig:figura-heat-equation}.
+O cálculo que descreve as dependências de dados pode ser descrito na \autoref{eq:2D-heat-equation}.
+
+\begin{align}
+    Ux,y = Ux,y  \nonumber \\
+               & + Cx * (Ux+1,y + Ux-1,y - 2 * Ux,y) \nonumber \\
+               & + Cy * (Ux,y+1 + Ux,y-1 - 2 * Ux,y)
+    \label{eq:2D-heat-equation}
+\end{align}
