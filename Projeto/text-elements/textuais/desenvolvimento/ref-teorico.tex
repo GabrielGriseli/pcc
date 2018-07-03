@@ -18,7 +18,7 @@ essas partes, são constituídas de instruções sequenciais \cite{hennessy2014o
 
 \section{Arquiteturas Voltadas a Computação Heterogênea}
 Muitas das arquiteturas que estão atualmente nos supercomputadores é voltada a computação heterogênea \cite{meuer2014top500}.
-O termo heterogênea, descreve que diferentes arquiteturas possam ser usadas em um mesmo nó computacional, como por exemplo, processadores multicore e aceleradores como a GPU e a FPGAs \cite{intrArqHete:2012}.
+O termo heterogênea, descreve que diferentes arquiteturas possam ser usadas em um mesmo nó computacional, como por exemplo, processadores multicore e aceleradores como a GPU \cite{intrArqHete:2012}.
 
 \subsection{Processadores \textit{Multicore}}
 Os processadores \textit{multicore} ou de múltiplos núcleos, são um único componente de computação (um único chip), com duas ou mais unidade de processamento que são chamadas de núcleos. \cite{blake2009survey}
@@ -43,7 +43,7 @@ neste caso não são necessários a utilização de linguagens ou compiladores e
 
 \subsection{Aceleradores}
 Um acelerador é um \textit{hardware} que tem a função de executar algumas instruções mais eficientes,
-quando comparada com a CPU. São exemplos de aceleradores as GPUs e as FPGAs \cite{kindratenko2010high}.
+quando comparada com a CPU. Um exemplo de acelerador é a GPU \cite{kindratenko2010high}.
 
 \subsubsection{GPUs}
 As GPUs, em português, unidade de processamento gráfico, inicialmente foram desenvolvidas para ser um processador otimizado para gráficos 2D e 3D, vídeo,
@@ -58,13 +58,15 @@ CUDA, é uma interface para programação paralela escalável baseada em linguag
 OpenCL, é uma interface voltada para programação paralela em ambientes heterogêneos, possibilitando que o desenvolvimento da aplicação seja executado em diferentes dispositivos instalados em uma máquina (CPU-GPU).
 Diferente da interface CUDA, a OpenCL não está vinculada a uma fabricante de GPU, portanto o desenvolvimento de aplicações com essa interface não fica limitado a um fabricante específico \cite{opencl:2018}.
 
+\newpage
+
 \section{Ambientes de Tempo de Execução Baseados em Tarefas}
 Os ambientes de execução baseados em tarefas tem o objetivo de facilitar o desenvolvimento e a execução de aplicações paralelas em sistemas heterogêneos.
 Esses ambientes permitem que os desenvolvedores programem aplicações paralelas em alto nível com APIs simples, retirando a obrigação do mesmo de lidar com detalhes de baixo nível, como transferência de dados, agendamento de tarefas e sincronizações \cite{kumar:tel-01538516}.
 
-Nesses ambientes é possível desenvolver aplicações paralelas orientadas ao paradigma de Grafo de Dependências de Tarefas.
+Nesses ambientes é possível desenvolver aplicações paralelas orientadas ao paradigma de paralelismo de tarefas.
 Nesse paradigma, o código da aplicação registra a criação de tarefas e a dependência de dados que existem entre elas.
-Esse registro é expressado como um grafo acíclico direcionado - \textit{Directed Acyclic Graph} (DAG), onde os vértices do grafo representam as tarefas a serem executadas e as arestas as dependências de dados que existem entre essas tarefas \cite{kumar:tel-01538516,thoman2018taxonomy}.
+Esse registro é expresso como um grafo acíclico direcionado - \textit{Directed Acyclic Graph} (DAG), onde os vértices do grafo representam as tarefas a serem executadas e as arestas as dependências de dados que existem entre essas tarefas \cite{kumar:tel-01538516,thoman2018taxonomy}.
 
 \subsection{Paradigma de Paralelismo de Tarefas}
 
@@ -89,7 +91,7 @@ A \autoref{fig:figura-mergesort} demonstra um grafo de dependência de tarefas d
 Cada metade é uma nova tarefa, sendo que são elas são, \emph{T4}, \emph{T5}, \emph{T6} E \emph{T7}, essas tarefas são responsáveis por ordenar os dados.
 Apos isso, as tarefas \emph{T8}, \emph{T9} e \emph{T10} fazem a combinação das partes separadas.
 
-Nesse exemplo é possível notar as dependências de dados que existem entre as tarefas, pois as tarefas de combinação não podem ser executadas antes que as tarefas de divisão e ordenação tenham sido concluídas;
+Nesse exemplo é possível notar as dependências de dados que existem entre as tarefas, pois as tarefas de combinação não podem ser executadas antes que as tarefas de divisão e ordenação tenham sido concluídas.
 
 Aplicações baseadas no paradigma de paralelismo de tarefas podem explorar mais os recursos computacionais quando direcionadas a um ambiente de execução.
 Após o desenvolvedor descrever as tarefas e as suas dependências, o ambiente é responsável pelo agendamento de tarefas, transferência de dados e gerenciamento das dependências \cite{pinto2017visual}.
@@ -101,8 +103,13 @@ Apos isso, o tempo de execução pode usar heurísticas de agendamento apropriad
 StarPU é um sistema de tempo de execução que oferece suporte a arquiteturas multicore heterogêneas, oferecendo uma visão unificada dos recursos computacionais (CPUs e aceleradores ao mesmo tempo).
 O ambiente implementa mecanismos para escalonar de forma eficiente as tarefas em uma arquitetura heterogênea \cite{augonnet2011scheduling}. 
 
-Esta ferramenta tem como objetivo permitir que os programadores explorem o poder de computação das CPUs e GPUs disponíveis, ao mesmo tempo que em que os libera da necessidade de adaptar especialmente seus programas à máquina de destino e unidades de processamento.
-StarPU é uma extensão para linguagens da família C (C Extensions), ela fornece uma API para descrever as tarefas e as suas dependências que podem existir em uma aplicação \cite{augonnet2011scheduling}.
+Esta ferramenta tem como objetivo permitir que os programadores explorem o poder de computação das CPUs e GPUs disponíveis, ao mesmo tempo que os libera da necessidade de adaptar especialmente seus programas à máquina de destino e unidades de processamento.
+StarPU é uma extensão para linguagens da família C (C \textit{Extensions}), ela fornece uma API para descrever as tarefas e as suas dependências que podem existir em uma aplicação \cite{augonnet2011scheduling}.
+
+\newpage
+
+O modelo de execução do StarPU, pode ser descrito por \citeonline{pinto2011ambientes}:
+% Pinto (2011):
 
 \begin{citacao}
 O modelo de execução do StarPU propõe uma abordagem de tarefas independente da arquitetura base.
@@ -113,4 +120,5 @@ Um codelet contém uma descrição dos dados e o tipo de acesso (leitura, escrit
 Codelets são lançados de forma assíncrona. Com isso o escalonador pode reordenar as tarefas para melhorar o desempenho respeitando as dependências entre elas.
 Uma aplicação StarPU é descrita como um conjunto de codelets com suas dependências de dados. \cite[p.~26]{pinto2011ambientes}
 \end{citacao}
-\section{Transferência de Calor em Placas Metálicas}
+
+\section{Simulação de Transferência de Calor}
