@@ -13,7 +13,7 @@ que busca encontrar uma solução para um problema complexo, como por exemplo, p
 A diferença de um programa sequencial para um programa paralelo, é que um programa sequencial é visto como uma série de instruções
 sequenciais que devem ser executadas em um único processador.
 Já um programa paralelo, é visto como um conjunto de partes que podem ser resolvidos concorrentemente,
-onde essas partes são constituídas de instruções sequenciais \cite{hennessy2014organizaccao,tanenbaum20103a}
+onde essas partes são constituídas de instruções sequenciais. \cite{hennessy2014organizaccao,tanenbaum20103a}
 % \subsection{Classificação e Terminologia}
 
 \section{Arquiteturas Voltadas a Computação Heterogênea}
@@ -22,9 +22,9 @@ O termo heterogênea, descreve que diferentes arquiteturas possam ser usadas em 
 
 \subsection{Processadores \textit{Multicore}}
 Os processadores \textit{multicore} ou de múltiplos núcleos, são um único componente de computação (um único chip), com duas ou mais unidade de processamento que são chamadas de núcleos. \cite{blake2009survey}
-“Logo um microprocessador quadcore é um chip que contém quatro processadores, ou quatro núcleos” \cite[p.~31]{hennessy2014organizaccao}
+“Logo um microprocessador \textit{quadcore} é um \textit{chip} que contém quatro processadores, ou quatro núcleos” \cite[p.~31]{hennessy2014organizaccao}.
 
-Os multiprocessadores com múltiplos núcleos ganharam destaque nos últimos anos, “a partir de 2006 todas as empresas de desktop e servidor estavam usando microprocessadores com múltiplos processadores por chip” \cite[p.~31]{hennessy2014organizaccao}
+Os multiprocessadores com múltiplos núcleos ganharam destaque nos últimos anos, “a partir de 2006 todas as empresas de desktop e servidor estavam usando microprocessadores com múltiplos processadores por chip” \cite[p.~31]{hennessy2014organizaccao}.
 O motivo de se tornarem tão populares foi a barreira física encontra no aumento de desempenho dos processadores sequenciais, que era baseado no aumento da frequência de \textit{clock} \cite{hennessy2014organizaccao}.
 
 Para o sistema operacional cada núcleo é visto como um processador lógico independente.
@@ -39,7 +39,7 @@ Para programar processadores \textit{multicore} pode-se optar por utilizar ferra
 OpenMP é uma API que suporta programação de processadores \textit{multicore} em C/C++ e Fortran.
 A API consiste na adição de diretivas de compilação para indicar blocos que podem paralelizados.
 Intel TBB é uma biblioteca desenvolvida pela Intel, onde são usados \textit{templates} para programação paralela em linguagem C++.
-Neste caso não são necessários a utilização de linguagens ou compiladores especiais
+Neste caso não são necessários a utilização de linguagens ou compiladores especiais.
 
 \subsection{Aceleradores}
 Um acelerador é um \textit{hardware} que tem a função de executar algumas instruções mais eficientes,

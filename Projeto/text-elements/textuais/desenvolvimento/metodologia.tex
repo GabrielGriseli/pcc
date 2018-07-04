@@ -5,7 +5,7 @@
 
 Para conseguir explorar os ambientes de execução em arquiteturas heterogêneas, será necessário desenvolver uma aplicação como estudo de caso. Essa aplicação deverá simular o comportamento real de uma aplicação para Computação de Alto Desempenho. 
 
-A aplicação desenvolvida será a de uma simulação de transferência de calor em uma placa metálica bidimensional. A escolha dessa simulação se dá pela grande quantidade de dependência de dados que existem na transferência de calor, sendo possível desenvolvê-la com o paradigma de paralelismo e tarefas e direcioná-la a um ambiente de execução.
+A aplicação desenvolvida será a de uma simulação de transferência de calor em uma placa metálica bidimensional. A escolha dessa simulação se dá pela grande quantidade de dependência de dados que existem na transferência de calor, sendo possível desenvolvê-la com o paradigma de paralelismo de tarefas e direcioná-la a um ambiente de execução.
 
 Inicialmente, será feita uma pesquisa sobre arquiteturas heterogêneas e como funcionam os ambientes de execução para estas arquiteturas,
 mais especificamente o ambiente StarPU.
@@ -22,6 +22,5 @@ Em seguida, será realizado a implementação paralela da simulação de transfe
 Após isso, a aplicação será executada no ambiente StarPU. 
 A execução do ambiente será feita em uma máquina com um processador Intel core I5 2310 (2.90GHz com 4 núclos) e uma GPU Nvidia 750TI (640 cudas cores).
 
-Por fim, será avaliado o desempenho da aplicação desenvolvida com o paradigma de paralelismo de tarefas com a aplicação sequencial. Para isso serão analisados os tempos de execução das aplicações e a quantidade de recursos que foram utilizados.
-
+Por fim, será avaliado o desempenho da aplicação desenvolvida com o paradigma de paralelismo de tarefas, comparando com a aplicação sequencial. Para isso, serão analisados os tempos de execução das aplicações e a quantidade de recursos que foram utilizados.
 Será também avaliado como a arquitetura heterogênea se comportou com a execução da aplicação no ambiente StarPU, analisando se houve algum tipo de overhead na comunicação dos dados.
